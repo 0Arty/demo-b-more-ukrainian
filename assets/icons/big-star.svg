@@ -1,0 +1,18 @@
+<svg width="125" height="125" viewBox="0 0 125 125" fill="none" xmlns="http://www.w3.org/2000/svg" class='footer-svg-star'>
+<g >
+<g filter="url(#filter0_g_5658_61999)">
+<path d="M110.597 98.475L98.4752 110.597L74.2313 86.3526L86.3529 74.231L110.597 98.475ZM74.232 110.597L62.1096 122.719L49.9873 110.597L62.1096 98.4743L74.232 110.597ZM122.719 62.1094L110.597 74.2317L98.4745 62.1094L110.597 49.9871L122.719 62.1094ZM74.2313 86.3526L62.1096 98.4743L49.988 86.3526L62.1096 74.231L74.2313 86.3526ZM98.4745 62.1094L86.3529 74.231L74.2313 62.1094L86.3529 49.9877L98.4745 62.1094ZM49.988 86.3526L25.7441 110.597L13.6224 98.475L37.8664 74.231L49.988 86.3526ZM110.597 25.7438L86.3529 49.9877L74.2313 37.8661L98.4752 13.6222L110.597 25.7438ZM49.988 62.1094L37.8664 74.231L25.7447 62.1094L37.8664 49.9877L49.988 62.1094ZM74.2313 37.8661L62.1096 49.9877L49.988 37.8661L62.1096 25.7445L74.2313 37.8661ZM25.7447 62.1094L13.6224 74.2317L1.5001 62.1094L13.6224 49.9871L25.7447 62.1094ZM49.988 37.8661L37.8664 49.9877L13.6224 25.7438L25.7441 13.6222L49.988 37.8661ZM74.232 13.6222L62.1096 25.7445L49.9873 13.6222L62.1096 1.49983L74.232 13.6222Z" fill="#FFF846"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_g_5658_61999" x="0" y="0" width="124.219" height="124.219" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="2 2" numOctaves="3" seed="7951" />
+<feDisplacementMap in="shape" scale="3" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="100%" height="100%" />
+<feMerge result="effect1_texture_5658_61999">
+<feMergeNode in="displacedImage"/>
+</feMerge>
+</filter>
+</defs>
+</svg>
