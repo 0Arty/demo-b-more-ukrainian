@@ -256,80 +256,6 @@ APP.sharePostIntoSoccials = {
    },
 }
 
-APP.countrySelect = () => {
-   const input = document.querySelector('#phone')
-   const $input = $(input)
-   const $errorMsg = $('.ui-input-phone-error')
-
-   if (!input) {
-      return
-   }
-
-   // 1. Ініціалізація intl-tel-input
-   const iti = window.intlTelInput(input, {
-      utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js',
-      initialCountry: 'ca',
-      separateDialCode: true,
-      preferredCountries: ['ua', 'pl', 'us', 'de', 'ca'],
-      autoPlaceholder: 'aggressive',
-   })
-
-   // 2. Функція оновлення маски
-   function updateMask() {
-      let placeholder = input.getAttribute('placeholder')
-
-      if (!placeholder) {
-         placeholder = '0000000000'
-      }
-
-      let exampleNumber = placeholder.replace(/\D/g, '')
-      let length = exampleNumber.length
-
-      let maskPattern = ''
-
-      if (length === 9) {
-         maskPattern = '999-999-999'
-      } else if (length === 11) {
-         maskPattern = '999-999-999-99'
-      } else {
-         maskPattern = '(999)-999-99-99'
-      }
-
-      // Застосовуємо маску
-      $input.inputmask('remove')
-      $input.inputmask({
-         mask: maskPattern,
-         placeholder: '_',
-         showMaskOnHover: false,
-         showMaskOnFocus: true,
-         clearIncomplete: true,
-      })
-   }
-
-   iti.promise.then(function () {
-      updateMask()
-   })
-
-   // 4. Подія зміни країни
-   input.addEventListener('countrychange', function () {
-      $input.val('')
-      updateMask()
-   })
-
-   // 5. Валідація
-   $input.on('blur', function () {
-      if ($input.inputmask('isComplete')) {
-         $errorMsg.hide()
-         $input.css('border-color', '#ccc')
-      } else {
-         if ($input.val().length > 0) {
-            $errorMsg.show()
-            $input.css('border-color', 'red')
-         }
-      }
-   })
-}
-
 APP.header = {
    scrolled: function () {
       const header = document.querySelector('header')
@@ -568,7 +494,7 @@ APP.switchEventsTab = () => {
                },
             })
 
-            // ScrollTrigger.refresh(true)
+            ScrollTrigger.refresh(true)
          },
       })
 
@@ -1019,12 +945,10 @@ APP.sponsors = {
 
 document.addEventListener('DOMContentLoaded', event => {
    APP.gsapConfig()
-   APP.utils.inputMasks()
    APP.utils.scrollToAnchor()
 
    APP.horizontalSlider.init()
    //    logic
-   APP.countrySelect()
    APP.sliders.init()
    APP.header.init()
    APP.heroPadding()

@@ -2588,6 +2588,7 @@ body {
    top: 0;
    display: grid;
    grid-template-columns: 1fr 1fr;
+   pointer-events: none;
 }
 @media (width<=47.99875rem) {
    .volunteer .absolute__bg {
