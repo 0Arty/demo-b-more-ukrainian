@@ -563,6 +563,10 @@ APP.horizontalSlider = {
 
    calcSizes: function () {
       this.slideSize = $('.our-performers-desktop .performers-dektop-slide').innerWidth()
+
+      if (!this.slides) {
+         return
+      }
       const numSlides = this.slides.length
 
       if (numSlides > 0) {
@@ -576,6 +580,9 @@ APP.horizontalSlider = {
 
    setSizes: function () {
       const self = this
+      if (!this.slides) {
+         return
+      }
 
       this.slides.each(function (index) {
          const slide = $(this)
@@ -827,7 +834,7 @@ APP.aboutUs = {
 
          window.addEventListener('resize', this.resizeHandler)
          return () => {
-            self.cleanup()
+            this.cleanup()
          }
       })
    },
