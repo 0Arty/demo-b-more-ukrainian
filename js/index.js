@@ -791,7 +791,17 @@ APP.aboutUs = {
          this.split.revert()
       }
 
-      this.split = new SplitText(textElement, { type: 'chars' })
+      this.split = new SplitText(textElement, {
+         type: 'words,chars',
+         wordsClass: 'word-wrapper',
+      })
+
+      // Додаємо white-space: nowrap до кожного слова
+      gsap.set(this.split.words, {
+         display: 'inline-block',
+         whiteSpace: 'nowrap',
+      })
+
       const getStartOffset = () => APP.utils.getHeaderHeight() + 32
 
       this.timeline = gsap.timeline({
@@ -819,6 +829,24 @@ APP.aboutUs = {
             ease: 'power3.inOut',
          },
       )
+   },
+   cleanup: function () {
+      if (this.resizeHandler) {
+         window.removeEventListener('resize', this.resizeHandler)
+         this.resizeHandler = null
+      }
+      if (this.scrollTriggerInstance) {
+         this.scrollTriggerInstance.kill()
+         this.scrollTriggerInstance = null
+      }
+      if (this.timeline) {
+         this.timeline.kill()
+         this.timeline = null
+      }
+      if (this.split) {
+         this.split.revert()
+         this.split = null
+      }
    },
 
    init: function () {
